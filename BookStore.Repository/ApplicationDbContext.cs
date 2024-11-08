@@ -14,6 +14,7 @@ namespace BookStore.Repository
         public virtual DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public virtual DbSet<BookInShoppingCart> BooksInShoppingCarts { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<EmailMessage> EmailMessages { get; set; }
         public virtual DbSet<BookInOrder> BooksInOrders { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

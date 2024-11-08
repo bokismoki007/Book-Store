@@ -16,11 +16,13 @@ namespace BookStore.Service.Implementation
         private readonly IRepository<ShoppingCart> _shoppingCartRepository;
         private readonly IRepository<Book> _bookRepository;
         private readonly IRepository<Order> _orderRepository;
+        private readonly IRepository<EmailMessage> _emailMessageRepository;
         private readonly IRepository<BookInShoppingCart> _bookInShoppingCartRepository;
         private readonly IRepository<BookInOrder> _bookInOrderRepository;
         private readonly IUserRepository _userRepository;
+        private readonly IEmailService _emailService;
 
-        public ShoppingCartService(IRepository<ShoppingCart> shoppingCartRepository, IRepository<Book> bookRepository, IRepository<Order> orderRepository, IRepository<BookInShoppingCart> bookInShoppingCartRepository, IRepository<BookInOrder> bookInOrderRepository, IUserRepository userRepository)
+        public ShoppingCartService(IRepository<ShoppingCart> shoppingCartRepository, IRepository<Book> bookRepository, IRepository<Order> orderRepository, IRepository<BookInShoppingCart> bookInShoppingCartRepository, IRepository<BookInOrder> bookInOrderRepository, IUserRepository userRepository, IRepository<EmailMessage> emailRepository, IEmailService emailService)
         {
             _shoppingCartRepository = shoppingCartRepository;
             _bookRepository = bookRepository;
@@ -28,6 +30,8 @@ namespace BookStore.Service.Implementation
             _bookInShoppingCartRepository = bookInShoppingCartRepository;
             _bookInOrderRepository = bookInOrderRepository;
             _userRepository = userRepository;
+            _emailMessageRepository = emailRepository;
+            _emailService = emailService;
         }
 
         public bool AddToShoppingConfirmed(BookInShoppingCart model, string userId)
@@ -86,9 +90,9 @@ namespace BookStore.Service.Implementation
             var loggedInUser = _userRepository.Get(userId);
 
             var userShoppingCart = loggedInUser?.UserCart;
-            //EmailMessage message = new EmailMessage();
-            //message.Subject = "Successfull order";
-            //message.MailTo = loggedInUser.Email;
+            EmailMessage message = new EmailMessage();
+            message.Subject = "Successfull book order";
+            message.MailTo = loggedInUser.Email;
             Order order = new Order
             {
                 Id = Guid.NewGuid(),
@@ -124,7 +128,7 @@ namespace BookStore.Service.Implementation
             }
 
             sb.AppendLine("Total price for your order: " + totalPrice.ToString());
-            //message.Content = sb.ToString();
+            message.Content = sb.ToString();
 
             productsInOrder.AddRange(rez);
 
@@ -135,7 +139,7 @@ namespace BookStore.Service.Implementation
 
             loggedInUser.UserCart.BooksInShoppingCart.Clear();
             _userRepository.Update(loggedInUser);
-            //this._emailService.SendEmailAsync(message);
+            this._emailService.SendEmailAsync(message);
 
             return true;
         }

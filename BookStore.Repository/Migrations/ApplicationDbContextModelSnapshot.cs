@@ -132,6 +132,29 @@ namespace BookStore.Repository.Migrations
                     b.ToTable("BooksInShoppingCarts");
                 });
 
+            modelBuilder.Entity("BookStore.Domain.Models.Domain.EmailMessage", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Content")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MailTo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Subject")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EmailMessages");
+                });
+
             modelBuilder.Entity("BookStore.Domain.Models.Domain.Order", b =>
                 {
                     b.Property<Guid>("Id")
