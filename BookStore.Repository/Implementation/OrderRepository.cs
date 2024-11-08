@@ -28,13 +28,13 @@ namespace BookStore.Repository.Implementation
                 .ToList();
         }
 
-        public Order GetDetailsForOrder(BaseEntity id)
+        public Order GetDetailsForOrder(Guid? id)
         {
             return entities
                 .Include(z => z.BooksInOrder)
                 .Include(z => z.Owner)
                 .Include("BooksInOrder.Book")
-                .SingleOrDefaultAsync(z => z.Id == id.Id).Result;
+                .SingleOrDefaultAsync(z => z.Id == id).Result;
         }
     }
 }

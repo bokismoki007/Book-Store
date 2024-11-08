@@ -12,10 +12,11 @@ namespace BookStore.Service.Implementation
     public class AuthorService : IAuthorService
     {
         private readonly IRepository<Author> _authorRepository;
-
-        public AuthorService(IRepository<Author> authorRepository)
+        private readonly IRepository<Book> _bookRepository;
+        public AuthorService(IRepository<Author> authorRepository, IRepository<Book> bookRepository)
         {
             _authorRepository = authorRepository;
+            _bookRepository = bookRepository;
         }
 
         public void CreateNewAuthor(Author a)
@@ -37,6 +38,7 @@ namespace BookStore.Service.Implementation
         public Author GetDetailsForAuthor(Guid? id)
         {
             var author = _authorRepository.Get(id);
+            author.Books = _bookRepository.GetAll().Where(z => z.AuthorId == id).ToList();
             return author;
         }
 

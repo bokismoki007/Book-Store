@@ -34,3 +34,40 @@
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
+<br />
+<h3>Books</h3>
+<table class="table">
+    <thead>
+    <th>#</th>
+    <th>Title</th>
+    <th>Genre</th>
+    <th>Year Published</th>
+    </thead>
+    <tbody>
+        @{
+            var i = 0;
+
+            foreach (var item in Model.Books)
+            {
+                <tr>
+                    <td>
+                        @{
+                            i = i + 1;
+                            <p>@i</p>
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Genre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Year)
+                    </td>
+                </tr>
+
+            }
+        }
+    </tbody>
+</table>

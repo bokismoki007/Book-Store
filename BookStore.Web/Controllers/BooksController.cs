@@ -1,8 +1,11 @@
 ﻿using BookStore.Domain.Models.Domain;
 using BookStore.Service.Interface;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 using static System.Reflection.Metadata.BlobBuilder;
 
 namespace BookStore.Web.Controllers
@@ -11,10 +14,12 @@ namespace BookStore.Web.Controllers
     {
         private readonly IBookService _bookService;
         private readonly IAuthorService _authorService;
+        private readonly IShoppingCartService _shoppingCartService;
 
-        public BooksController(IBookService bookService, IAuthorService authorService)
+        public BooksController(IBookService bookService, IShoppingCartService shoppingCartService, IAuthorService authorService)
         {
             _bookService = bookService;
+            _shoppingCartService = shoppingCartService;
             _authorService = authorService;
         }
 
@@ -143,6 +148,34 @@ namespace BookStore.Web.Controllers
         {
             _bookService.DeleteBook(id);
             return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult AddToCart(Guid? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var product = _bookService.GetDetailsForBook(id);
+
+            BookInShoppingCart ps = new BookInShoppingCart();
+
+            if (product != null)
+            {
+                ps.BookId = product.Id;
+            }
+
+            return View(ps);
+        }
+        [HttpPost]
+        public IActionResult AddToCartConfirmed(BookInShoppingCart model)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            _shoppingCartService.AddToShoppingConfirmed(model, userId);
+
+            return View("Index", _bookService.GetAllBooks());
         }
     }
 }

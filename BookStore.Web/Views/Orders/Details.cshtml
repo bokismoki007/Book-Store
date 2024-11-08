@@ -1,0 +1,81 @@
+﻿@model BookStore.Domain.Models.Domain.Order
+
+<h1>Order Details</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Owner.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Owner.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Owner.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Owner.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Owner.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Owner.Address)
+        </dd>
+    </dl>
+</div>
+<br />
+<h3>Books</h3>
+<table class="table">
+    <thead>
+    <th>#</th>
+    <th>Title</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Total</th>
+    </thead>
+    <tbody>
+        @{
+            var i = 0;
+            var itemCombined = 0;
+            var total = 0;
+            foreach (var item in Model.BooksInOrder)
+            {
+                <tr>
+                    <td>
+                        @{
+                            i = i + 1;
+                            <p>@i</p>
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Book.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Book.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @{
+                            itemCombined = item.Book.Price * item.Quantity;
+                            total += itemCombined;
+                            <p>@itemCombined</p>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+    <tfoot>
+    <th><b>Total:</b></th>
+
+    <th></th>
+    <th></th>
+    <th></th>
+
+    <th><b>@total</b></th>
+
+    </tfoot>
+</table>

@@ -10,6 +10,6 @@ namespace BookStore.Repository.Interface
     public interface IOrderRepository
     {
         List<Order> GetAllOrders();
-        Order GetDetailsForOrder(BaseEntity id);
+        Order GetDetailsForOrder(Guid? id);
     }
 }
