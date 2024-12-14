@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BookStore.Domain.Models.Domain.Book>
+﻿@model List<BookStore.Domain.Models.Domain.Book>
 
 @{
     ViewData["Title"] = "Index";
@@ -6,61 +6,44 @@
 
 <h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Author)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Genre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Year)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Image)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
+<div class="container">
+    <div class="m-3">
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</div>
+
+
+  @for(int i=0;i<Model.Count; i++)
+    {
+        var item = Model[i];
+        if(i % 3 == 0)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Author.Id)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Genre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Year)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Image)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
+            @:<div class="row justify-content-between">
         }
-    </tbody>
-</table>
+        <div class="col-3 m-4 d-flex">
+            <div class="card" style="width: 20rem;">
+                <img class="card-img-top" src="@item.Image" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Title</h5>
+                    <p class="card-text">@item.Genre</p>
+                    <h6>Price: @item.Price</h6>
+                    <h6>Year: @item.Year</h6>
+                    <br />
+                
+                    <div class="d-flexjustify-content-between">
+                        <a asp-controller="Books" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Edit</a>
+                        <a asp-controller="Books" asp-action="AddToCart" asp-route-id="@item.Id" class="btn btn-success btn-sm">Add to Cart</a>
+                        <a asp-action="Details" class="btn btn-info btn-sm" asp-route-id="@item.Id">Details</a>
+                        <a asp-action="Delete" class="btn btn-danger btn-sm" asp-route-id="@item.Id">Delete</a>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+
+        if(i % 3 == 2)
+        {
+            @:</div>
+        }
+    }
+</div>

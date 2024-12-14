@@ -8,7 +8,7 @@
 <h1>Shopping Cart</h1>
 
 <table class="table">
-    <thead>
+    <thead class="table-dark">
         <tr>
             <th>
                 #
@@ -42,8 +42,7 @@
                     @Html.DisplayFor(modelItem => item.Quantity)
                 </td>
                 <td>
-                    |
-                    <a asp-action="DeleteFromShoppingCart" asp-controller="ShoppingCarts" asp-route-id="@item.Book.Id">Delete</a>
+                    <a asp-action="DeleteFromShoppingCart" asp-controller="ShoppingCarts" asp-route-id="@item.Book.Id" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
         }
@@ -55,7 +54,7 @@
     <th></th>
     <th></th>
 
-    <th><b>@Model.TotalPrice</b></th>
+    <th>@Model.TotalPrice$</th>
 
     </tfoot>
 </table>  

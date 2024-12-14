@@ -31,13 +31,13 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index" class="btn btn-warning">Back to List</a>
 </div>
 <br />
 <h3>Books</h3>
 <table class="table">
-    <thead>
+    <thead class="table-dark">
     <th>#</th>
     <th>Title</th>
     <th>Genre</th>
