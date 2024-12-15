@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bojana\\Book-Store\\BookStore.Domain\\BookStore.Domain.csproj": {}
+    "C:\\Users\\kamch\\OneDrive\\Desktop\\ISUpdated\\BookStore.Domain\\BookStore.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bojana\\Book-Store\\BookStore.Domain\\BookStore.Domain.csproj": {
+    "C:\\Users\\kamch\\OneDrive\\Desktop\\ISUpdated\\BookStore.Domain\\BookStore.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bojana\\Book-Store\\BookStore.Domain\\BookStore.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\kamch\\OneDrive\\Desktop\\ISUpdated\\BookStore.Domain\\BookStore.Domain.csproj",
         "projectName": "BookStore.Domain",
-        "projectPath": "C:\\Users\\Bojana\\Book-Store\\BookStore.Domain\\BookStore.Domain.csproj",
-        "packagesPath": "C:\\Users\\Bojana\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bojana\\Book-Store\\BookStore.Domain\\obj\\",
+        "projectPath": "C:\\Users\\kamch\\OneDrive\\Desktop\\ISUpdated\\BookStore.Domain\\BookStore.Domain.csproj",
+        "packagesPath": "C:\\Users\\kamch\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kamch\\OneDrive\\Desktop\\ISUpdated\\BookStore.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Bojana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kamch\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -70,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

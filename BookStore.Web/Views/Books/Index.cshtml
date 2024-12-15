@@ -4,13 +4,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+
 
 <div class="container">
-    <div class="m-3">
-    <a asp-action="Create" class="btn btn-success">Create New</a>
-</div>
 
+<h1>Books</h1>
+<a asp-action="Create" class="btn btn-success">Create New</a>
 
   @for(int i=0;i<Model.Count; i++)
     {

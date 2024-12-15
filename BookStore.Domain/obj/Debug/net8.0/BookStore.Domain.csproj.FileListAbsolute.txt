@@ -36,3 +36,16 @@ C:\Users\Bojana\Book-Store\BookStore.Domain\obj\Debug\net8.0\BookStore.Domain.dl
 C:\Users\Bojana\Book-Store\BookStore.Domain\obj\Debug\net8.0\refint\BookStore.Domain.dll
 C:\Users\Bojana\Book-Store\BookStore.Domain\obj\Debug\net8.0\BookStore.Domain.pdb
 C:\Users\Bojana\Book-Store\BookStore.Domain\obj\Debug\net8.0\ref\BookStore.Domain.dll
+C:\Users\kamch\OneDrive\Desktop\ISUpdated\BookStore.Domain\bin\Debug\net8.0\BookStore.Domain.deps.json
+C:\Users\kamch\OneDrive\Desktop\ISUpdated\BookStore.Domain\bin\Debug\net8.0\BookStore.Domain.dll
+C:\Users\kamch\OneDrive\Desktop\ISUpdated\BookStore.Domain\bin\Debug\net8.0\BookStore.Domain.pdb
+C:\Users\kamch\OneDrive\Desktop\ISUpdated\BookStore.Domain\obj\Debug\net8.0\BookStore.Domain.csproj.AssemblyReference.cache
+C:\Users\kamch\OneDrive\Desktop\ISUpdated\BookStore.Domain\obj\Debug\net8.0\BookStore.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kamch\OneDrive\Desktop\ISUpdated\BookStore.Domain\obj\Debug\net8.0\BookStore.Domain.AssemblyInfoInputs.cache
+C:\Users\kamch\OneDrive\Desktop\ISUpdated\BookStore.Domain\obj\Debug\net8.0\BookStore.Domain.AssemblyInfo.cs
+C:\Users\kamch\OneDrive\Desktop\ISUpdated\BookStore.Domain\obj\Debug\net8.0\BookStore.Domain.csproj.CoreCompileInputs.cache
+C:\Users\kamch\OneDrive\Desktop\ISUpdated\BookStore.Domain\obj\Debug\net8.0\BookStore.Domain.sourcelink.json
+C:\Users\kamch\OneDrive\Desktop\ISUpdated\BookStore.Domain\obj\Debug\net8.0\BookStore.Domain.dll
+C:\Users\kamch\OneDrive\Desktop\ISUpdated\BookStore.Domain\obj\Debug\net8.0\refint\BookStore.Domain.dll
+C:\Users\kamch\OneDrive\Desktop\ISUpdated\BookStore.Domain\obj\Debug\net8.0\BookStore.Domain.pdb
+C:\Users\kamch\OneDrive\Desktop\ISUpdated\BookStore.Domain\obj\Debug\net8.0\ref\BookStore.Domain.dll
