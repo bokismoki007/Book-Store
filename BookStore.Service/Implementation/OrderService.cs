@@ -12,15 +12,23 @@ namespace BookStore.Service.Implementation
     public class OrderService : IOrderService
     {
         private readonly IOrderRepository _orderRepository;
+        private readonly IUserRepository _userRepository;
 
-        public OrderService(IOrderRepository orderRepository)
+        public OrderService(IOrderRepository orderRepository, IUserRepository userRepository)
         {
             _orderRepository = orderRepository;
+            _userRepository = userRepository;
         }
 
         public List<Order> GetAllOrders()
         {
             return _orderRepository.GetAllOrders();
+        }
+
+        public List<Order> GetAllOrdersForUser(string userId)
+        {
+            var loggedInUser = _userRepository.Get(userId);
+            return this.GetAllOrders().Where(order => order.Owner.Email == loggedInUser.Email).ToList();
         }
 
         public Order GetDetailsForOrder(Guid? id)

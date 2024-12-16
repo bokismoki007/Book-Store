@@ -11,5 +11,6 @@ namespace BookStore.Service.Interface
     {
         List<Order> GetAllOrders();
         Order GetDetailsForOrder(Guid? id);
+        List<Order> GetAllOrdersForUser(string userId);
     }
 }

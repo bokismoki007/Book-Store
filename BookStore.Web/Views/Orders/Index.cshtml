@@ -15,7 +15,12 @@
             <th>
                 Items
             </th>
-            <th></th>
+            <th>
+                Details
+            </th>
+            <th>
+                Export
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -31,6 +36,9 @@
                 </td>
                 <td>
                     <a asp-action="Details" asp-route-id="@order.Id" class="btn btn-info">Details</a>
+                </td>
+                <td>
+                    <a asp-action="CreateInvoice" asp-route-id="@order.Id" class="btn btn-info">Create Invoice</a>
                 </td>
             </tr>
         }

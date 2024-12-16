@@ -272,6 +272,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "GemBox.Document": {
+              "target": "Package",
+              "version": "[35.0.1946, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.10, )"
