@@ -16,6 +16,7 @@ namespace BookStore.Repository
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<EmailMessage> EmailMessages { get; set; }
         public virtual DbSet<BookInOrder> BooksInOrders { get; set; }
+        public virtual DbSet<Food> Foods { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

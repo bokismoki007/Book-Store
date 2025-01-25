@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kamch\\OneDrive\\Desktop\\ISUpdated\\BookStore.Domain\\BookStore.Domain.csproj": {}
+    "C:\\Users\\zorlo\\Desktop\\Book-Store-master\\BookStore.Domain\\BookStore.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kamch\\OneDrive\\Desktop\\ISUpdated\\BookStore.Domain\\BookStore.Domain.csproj": {
+    "C:\\Users\\zorlo\\Desktop\\Book-Store-master\\BookStore.Domain\\BookStore.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kamch\\OneDrive\\Desktop\\ISUpdated\\BookStore.Domain\\BookStore.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\zorlo\\Desktop\\Book-Store-master\\BookStore.Domain\\BookStore.Domain.csproj",
         "projectName": "BookStore.Domain",
-        "projectPath": "C:\\Users\\kamch\\OneDrive\\Desktop\\ISUpdated\\BookStore.Domain\\BookStore.Domain.csproj",
-        "packagesPath": "C:\\Users\\kamch\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kamch\\OneDrive\\Desktop\\ISUpdated\\BookStore.Domain\\obj\\",
+        "projectPath": "C:\\Users\\zorlo\\Desktop\\Book-Store-master\\BookStore.Domain\\BookStore.Domain.csproj",
+        "packagesPath": "C:\\Users\\zorlo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zorlo\\Desktop\\Book-Store-master\\BookStore.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kamch\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\zorlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -50,6 +50,12 @@
               "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.10, )"
             }

@@ -3913,19 +3913,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kamch\\.nuget\\packages\\": {}
+    "C:\\Users\\zorlo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kamch\\OneDrive\\Desktop\\ISUpdated\\BookStore.Service\\BookStore.Service.csproj",
+      "projectUniqueName": "C:\\Users\\zorlo\\Desktop\\Book-Store-master\\BookStore.Service\\BookStore.Service.csproj",
       "projectName": "BookStore.Service",
-      "projectPath": "C:\\Users\\kamch\\OneDrive\\Desktop\\ISUpdated\\BookStore.Service\\BookStore.Service.csproj",
-      "packagesPath": "C:\\Users\\kamch\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kamch\\OneDrive\\Desktop\\ISUpdated\\BookStore.Service\\obj\\",
+      "projectPath": "C:\\Users\\zorlo\\Desktop\\Book-Store-master\\BookStore.Service\\BookStore.Service.csproj",
+      "packagesPath": "C:\\Users\\zorlo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\zorlo\\Desktop\\Book-Store-master\\BookStore.Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kamch\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\zorlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3939,11 +3939,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\kamch\\OneDrive\\Desktop\\ISUpdated\\BookStore.Domain\\BookStore.Domain.csproj": {
-              "projectPath": "C:\\Users\\kamch\\OneDrive\\Desktop\\ISUpdated\\BookStore.Domain\\BookStore.Domain.csproj"
+            "C:\\Users\\zorlo\\Desktop\\Book-Store-master\\BookStore.Domain\\BookStore.Domain.csproj": {
+              "projectPath": "C:\\Users\\zorlo\\Desktop\\Book-Store-master\\BookStore.Domain\\BookStore.Domain.csproj"
             },
-            "C:\\Users\\kamch\\OneDrive\\Desktop\\ISUpdated\\BookStore.Repository\\BookStore.Repository.csproj": {
-              "projectPath": "C:\\Users\\kamch\\OneDrive\\Desktop\\ISUpdated\\BookStore.Repository\\BookStore.Repository.csproj"
+            "C:\\Users\\zorlo\\Desktop\\Book-Store-master\\BookStore.Repository\\BookStore.Repository.csproj": {
+              "projectPath": "C:\\Users\\zorlo\\Desktop\\Book-Store-master\\BookStore.Repository\\BookStore.Repository.csproj"
             }
           }
         }

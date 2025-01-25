@@ -1,0 +1,54 @@
+﻿@model List<BookStore.Domain.Models.Domain.Food>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+
+
+    @for (int i = 0; i < Model.Count(); i++)
+    {
+        var item = Model[i];
+
+        if(i % 3 == 0)
+        {
+           @: <div class="row mt-3" style="justify-content:space-around;">
+        }
+
+        <div class="col-md-3 m-3" style="padding-right:10px">
+
+            <div class="card" style="width: 23rem; height:100%">
+              <img class="card-img-top" src="@item.Image" style="width:100%; height:100%;" alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title" style="text-align:center">@item.Name</h4>
+                <p class="card-text" style="text-align:center">Price:@item.Price$</p>
+              </div>
+              
+              <div class="card-footer">
+                @*  <a href="/Products/AddProductToCart/@item.Id" class="btn btn-warning" style="float:right; margin-left: 10px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+  <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+  <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+</svg>
+                </a> *@
+              </div>
+            </div>
+
+        </div>
+
+
+
+        if(i % 3 == 2)
+        {
+            @: </div>
+        }
+
+    }
+
+   
+
+        
+    
+
+</div>

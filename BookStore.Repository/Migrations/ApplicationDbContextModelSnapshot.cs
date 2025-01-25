@@ -42,7 +42,7 @@ namespace BookStore.Repository.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Author", (string)null);
+                    b.ToTable("Author");
                 });
 
             modelBuilder.Entity("BookStore.Domain.Models.Domain.Book", b =>
@@ -81,7 +81,7 @@ namespace BookStore.Repository.Migrations
 
                     b.HasIndex("CreatedById");
 
-                    b.ToTable("Books", (string)null);
+                    b.ToTable("Books");
                 });
 
             modelBuilder.Entity("BookStore.Domain.Models.Domain.BookInOrder", b =>
@@ -105,7 +105,7 @@ namespace BookStore.Repository.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("BooksInOrders", (string)null);
+                    b.ToTable("BooksInOrders");
                 });
 
             modelBuilder.Entity("BookStore.Domain.Models.Domain.BookInShoppingCart", b =>
@@ -129,7 +129,7 @@ namespace BookStore.Repository.Migrations
 
                     b.HasIndex("ShoppingCartId");
 
-                    b.ToTable("BooksInShoppingCarts", (string)null);
+                    b.ToTable("BooksInShoppingCarts");
                 });
 
             modelBuilder.Entity("BookStore.Domain.Models.Domain.EmailMessage", b =>
@@ -152,7 +152,30 @@ namespace BookStore.Repository.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("EmailMessages", (string)null);
+                    b.ToTable("EmailMessages");
+                });
+
+            modelBuilder.Entity("BookStore.Domain.Models.Domain.Food", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<float?>("Price")
+                        .HasColumnType("real");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Foods");
                 });
 
             modelBuilder.Entity("BookStore.Domain.Models.Domain.Order", b =>
@@ -168,7 +191,7 @@ namespace BookStore.Repository.Migrations
 
                     b.HasIndex("OwnerId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("BookStore.Domain.Models.Domain.ShoppingCart", b =>
@@ -186,7 +209,7 @@ namespace BookStore.Repository.Migrations
                         .IsUnique()
                         .HasFilter("[OwnerId] IS NOT NULL");
 
-                    b.ToTable("ShoppingCarts", (string)null);
+                    b.ToTable("ShoppingCarts");
                 });
 
             modelBuilder.Entity("BookStore.Domain.Models.Identity.BookStoreUser", b =>
